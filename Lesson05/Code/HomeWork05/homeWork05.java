@@ -11,12 +11,12 @@ public class homeWork05 {
         System.out.println("-------------------------");
 
         //Task 2
-        int a = 9, b = 8;
-        if ((a == 10 || b == 10) | ((a + b) == 10)) {
-            System.out.println(true);
-        } else System.out.println(false);
+        int a = 2, b = 8;
+//        if ((a == 10 || b == 10) | ((a + b) == 10)) {
+//            System.out.println(true);
+//        } else System.out.println(false);
         //вариант решения без if
-        boolean c = ((a == 10 || b == 10) | ((a + b) == 10))? true: false;
+        boolean c = ((a == 10 || b == 10) | ((a + b) == 10));
         System.out.println(c);
 
     }
