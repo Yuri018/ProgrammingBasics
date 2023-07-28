@@ -1,4 +1,4 @@
-package practicum;
+package practicumLoopFor;
 
 public class NegativOrPositiv {
     public static void main(String[] args) {
