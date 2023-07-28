@@ -18,10 +18,10 @@ public class Main09 {
     public static void main(String[] args) {
         Random random = new Random();
 
-        int[] doubleRandomArray = new int[10];
+        double[] doubleRandomArray = new double[10];
 
         for (int i = 0; i < doubleRandomArray.length; i++) {
-            int random1 =  random.nextInt(10, 21);
+            double random1 =  random.nextInt(10, 21);
             doubleRandomArray[i] = random1;
             System.out.print(doubleRandomArray[i] + "|");
         }
