@@ -27,7 +27,7 @@ public class Main11 {
         Random random = new Random();
         long[] accountArray = new long[20];
         for (int i = 0; i < accountArray.length; i++) {
-            accountArray[i] = random.nextLong(10000, 100000000);
+            accountArray[i] = random.nextLong(10_000, 100_000_000);
         }
         accountBalance(accountArray);
     }
