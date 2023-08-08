@@ -9,7 +9,8 @@ public class Main16 {
         int year = 2023;
 
 //        showDayOfThYear(day, month, year);
-        System.out.println(showDayOfThYear2(day, month, year));
+//        System.out.println(showDayOfThYear2(day, month, year));
+        System.out.println(showDayOfThYear3(day, month, year));
     }
 
     public static void showDayOfThYear(int d, int m, int year) {
@@ -36,5 +37,10 @@ public class Main16 {
         }
         res = (d < 10 ? "0" : "") + d + ". " + month + " " + year;
         return res;
+    }
+
+    public static String showDayOfThYear3(int d, int m, int year) {
+        String[] months = {"", "", "", "", "", "", "January", "August"};
+        return (d < 10 ? "0" : "") + d + ". " + months[m - 1] + " " + year;
     }
 }
