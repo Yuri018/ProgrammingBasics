@@ -8,16 +8,33 @@ public class Main16 {
         int month = 8;
         int year = 2023;
 
-        showDayOfThYear(day, month, year);
+//        showDayOfThYear(day, month, year);
+        System.out.println(showDayOfThYear2(day, month, year));
     }
 
     public static void showDayOfThYear(int d, int m, int year) {
-        switch (m){
-            case 8 : {
+        switch (m) {
+            case 8: {
                 String month = "August";
                 System.out.println("0" + d + ". " + month + " " + year);
                 break;
             }
         }
+    }
+
+    public static String showDayOfThYear2(int d, int m, int year) {
+        String res;
+        String month = "";
+        switch (m) {
+            case 1:
+                month = "January";
+                break;
+            case 8:
+                month = "August";
+                break;
+
+        }
+        res = (d < 10 ? "0" : "") + d + ". " + month + " " + year;
+        return res;
     }
 }
