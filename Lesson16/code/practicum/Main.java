@@ -26,7 +26,7 @@ public class Main {
     }
 
     public static void printGat(Cat cat){
-        System.out.println(cat.name + " " + cat.age + " " + cat.color);
+        System.out.println(cat.name + " " + showDayOfThYear3(cat.age) + " " + cat.color);
     }
 
 }
