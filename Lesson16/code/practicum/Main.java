@@ -2,7 +2,7 @@ package practicum;
 
 public class Main {
     public static void main(String[] args) {
-        MyDate date1 = new MyDate();
+        MyDate1 date1 = new MyDate1();
         date1.day = 1;
         date1.month = 8;
         date1.year = 2023;
@@ -20,7 +20,7 @@ public class Main {
 
 
     }
-    public static String showDayOfThYear3(MyDate date) {
+    public static String showDayOfThYear3(MyDate1 date) {
         String[] months = {"", "", "", "", "", "", "January", "August"};
         return (date.day < 10 ? "0" : "") + date.day + ". " + months[date.month - 1] + " " + date.year;
     }
