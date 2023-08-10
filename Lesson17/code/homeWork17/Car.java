@@ -6,6 +6,7 @@ public class Car {
     String licensePlate;
     MyDate registrationDat;
     Engine engine;
+    boolean isDrive;
 
     public Car(String brand, String color, String licensePlate, MyDate registrationDat, Engine engine) {
         this.brand = brand;
@@ -13,6 +14,7 @@ public class Car {
         this.licensePlate = licensePlate;
         this.registrationDat = registrationDat;
         this.engine = engine;
+        isDrive = false;
     }
 
     public String toString() {
@@ -21,12 +23,21 @@ public class Car {
     }
 
     public void drive(){
+        if (isDrive){
+            System.out.println("This car is going now");
+            return;
+        }
         engine.start();
+        isDrive = true;
         System.out.println(" car is driving");
     }
 
     public void stop(){
+        if (!isDrive){
+            System.out.println("the car is already");
+        }
         engine.stop();
+        isDrive = false;
         System.out.println(" car stopped");
     }
 }
