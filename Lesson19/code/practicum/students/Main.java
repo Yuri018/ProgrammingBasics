@@ -5,15 +5,21 @@ public class Main {
 
         //int[] rates1 = {4, 5, 3, 5, 2};
 
-        Student student = new Student("John");
-
-        System.out.println(student);
+        Student student = new Student("Max");
 
         student.addRate(4);
         student.addRate(3);
         student.addRate(2);
         student.addRate(5);
-        System.out.println(student);
+
+        System.out.println("---------------- GROUP ----------------");
+        Group group31_1 = new Group();
+
+        group31_1.add(student);
+
+        group31_1.add(new Student("John"));
+
+        System.out.println(group31_1);
 
 
 //        SmartArray array = new SmartArray();
