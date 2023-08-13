@@ -1,13 +1,13 @@
 package onlineStore;
 
+
 public class Basket {
     /*
-    Реализовать метод удаления и добавления товара в корзину.
+    Реализовать метод добавления и добавления товара в корзину.
     Реализовать метод, который распечатает весь заказ.
     Реализовать метод, который вернет сумму заказа.
      */
     private int size;
-//    private Product product;
     private Product[] basket = new Product[3];
 
 
@@ -30,19 +30,19 @@ public class Basket {
         basket = tempBasket;
     }
 
-    public void printBasket() {
+    public void printBasket() {//метод, который распечатает весь заказ
         String res = "";
         for (int i = 0; i < size; i++) {
-            res += basket[i] + ", ";
+            res += basket[i];
         }
-        System.out.println("basket = " + res);
-        System.out.println("Total prise: " + printTotalPrise());
+        System.out.println("In the basket:\n" + res);
+        System.out.printf("Total prise: %.2f  euro", printTotalPrise());
     }
 
-    public double printTotalPrise() {
+    public double printTotalPrise() {//метод, который вернет сумму заказа
         double totalPrise = 0.0;
         for (int i = 0; i < size; i++) {
-           totalPrise += basket[i].getPrise();
+            totalPrise += basket[i].getPrise();
         }
         return totalPrise;
     }

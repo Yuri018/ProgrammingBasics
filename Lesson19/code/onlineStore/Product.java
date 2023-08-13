@@ -10,6 +10,10 @@ public class Product {
         return prise;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public Product(String name, double prise, double weight, String color) {
         this.name = name;
         this.prise = prise;
@@ -18,12 +22,8 @@ public class Product {
     }
 
     @Override
-    public String toString() {//TODO поправить вывод
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", prise=" + prise +
-                ", weight=" + weight +
-                ", color='" + color + '\'' +
-                '}' + "\n";
+    public String toString() {
+        return name + "\nprise: " + prise + " euro" + "\nweight: " + weight + " gram" +
+                "\ncolor: " + color + "\n";
     }
 }
