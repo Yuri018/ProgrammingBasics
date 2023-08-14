@@ -1,6 +1,6 @@
 package onlineStore;
 
-public class Product {
+public class Product2 {
     private String name;
     private double prise;
     private double weight;
@@ -14,7 +14,7 @@ public class Product {
         return name;
     }
 
-    public Product(String name, double prise, double weight, String color) {
+    public Product2(String name, double prise, double weight, String color) {
         this.name = name;
         this.prise = prise;
         this.weight = weight;

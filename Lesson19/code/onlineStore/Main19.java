@@ -1,8 +1,11 @@
 package onlineStore;
 
 
-public class Main {
-    public static void main(String[] args) {
+import onlineStore2.Basket;
+import onlineStore2.Product;
+
+public class Main19 {
+    public static void main (String[] args) {
         /*
         Допустим, мы пишем on-line магазин. У нас есть класс Товар ( придумайте, какие поля должны быть).
         Реализуйте класс Корзинка, в которую можно добавить несколько товаров.
@@ -11,12 +14,12 @@ public class Main {
         Реализовать метод, который вернет сумму заказа.
          */
 
-        Product product1 = new Product("Butter", 2.5, 200.0, "yellow");
-        Product product2 = new Product("Tomato", 4.6, 1000.0, "red");
-        Product product3 = new Product("Bread", 3.2, 400.0, "light");
-        Product product4 = new Product("Milk", 1.9, 500.0, "white");
+        Product2 product1 = new Product2("Butter", 2.5, 200.0, "yellow");
+        Product2 product2 = new Product2("Tomato", 4.6, 1000.0, "red");
+        Product2 product3 = new Product2("Bread", 3.2, 400.0, "light");
+        Product2 product4 = new Product2("Milk", 1.9, 500.0, "white");
 
-        Basket basket = new Basket();
+        Basket2 basket = new Basket2();
 
         basket.addToBasket(product1);
         basket.addToBasket(product2);
