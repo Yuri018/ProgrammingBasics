@@ -18,16 +18,82 @@ class UserTest {
     }
 
     @Test
-    void testEmailDoubleAt(){
-        String invalidEmail = "jo@hn@gmail.com";
+    void testValidEmail() {
+        String validEmail = "john@gmx.de";
+        user.setEmail(validEmail);
+        assertEquals(validEmail, user.getEmail());
+    }
+
+    @Test
+    void testEmailWithoutAt() {
+        String invalidEmail = "john.gmx.de";
         user.setEmail(invalidEmail);
         assertEquals(email, user.getEmail());
     }
 
     @Test
-    void testEmailNotAt(){
-        String invalidEmail = "john.gmail.com";
+    void testEmailDoubleAt() {
+        String invalidEmail = "jo@hn@gmx.de";
         user.setEmail(invalidEmail);
         assertEquals(email, user.getEmail());
+    }
+
+    @Test
+    void testEmailDotAfterAt() {
+        String invalidEmail = "john@gmxde";
+        user.setEmail(invalidEmail);
+        assertEquals(email, user.getEmail());
+    }
+
+    @Test
+    void testEmailLastDot() {
+        String invalidEmail = "john@gmxde.";
+        user.setEmail(invalidEmail);
+        assertEquals(email, user.getEmail());
+        invalidEmail = "john@gmxd.e";
+        user.setEmail(invalidEmail);
+        assertEquals(email, user.getEmail());
+    }
+
+    @Test
+    void testEmailIncorrectSymbol() {
+        String invalidEmail = "jo!hn@gmx.de";
+        user.setEmail(invalidEmail);
+        assertEquals(email, user.getEmail());
+    }
+
+    @Test
+    void testPasswordLength() {
+        String invalidPassword = "aS4!@%&";
+        user.setPassword(invalidPassword);
+        assertEquals(password, user.getPassword());
+    }
+
+    @Test
+    void testSymbolInUppercase() {
+        String invalidPassword = "asfdg124";
+        user.setPassword(invalidPassword);
+        assertEquals(password, user.getPassword());
+    }
+
+    @Test
+    void testSymbolInLowercase() {
+        String invalidPassword = "AAAAAA124";
+        user.setPassword(invalidPassword);
+        assertEquals(password, user.getPassword());
+    }
+
+    @Test
+    void testSymbolInDigit() {
+        String invalidPassword = "AAAAAAaaa";
+        user.setPassword(invalidPassword);
+        assertEquals(password, user.getPassword());
+    }
+
+    @Test
+    void testIsASpecialSymbols() {
+        String invalidPassword = "AAAAAA124";
+        user.setPassword(invalidPassword);
+        assertEquals(password, user.getPassword());
     }
 }
