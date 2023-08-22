@@ -71,7 +71,7 @@ public class User {
     }
 
     private boolean passwordIsValid(String password) {
-        int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0;
+        int a = 0, b = 0, c = 0, d = 0;
 
         if (password.length() < 8) {
             return false;
@@ -87,23 +87,11 @@ public class User {
             if (Character.isDigit(ch)) {
                 c++;
             }
-            if (ch == '!') {
+            if (ch == '!' || ch == '%' || ch == '@' || ch == '*' || ch == '&') {
                 d++;
             }
-            if (ch == '%') {
-                e++;
-            }
-            if (ch == '@') {
-                f++;
-            }
-            if (ch == '*') {
-                g++;
-            }
-            if (ch == '&') {
-                h++;
-            }
         }
-        return a != 0 && b != 0 && c != 0 && d != 0 && e != 0 && f != 0 && g != 0 && h != 0;
+        return a != 0 && b != 0 && c != 0 && d != 0;
     }
     @Override
     public String toString() {
