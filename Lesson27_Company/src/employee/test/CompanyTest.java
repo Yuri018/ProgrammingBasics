@@ -42,18 +42,25 @@ class CompanyTest {
 
     @org.junit.jupiter.api.Test
     void removeEmployee() {
+        company.removeEmployee(1000);
+        assertNull(employees[1]);
+        assertEquals(4, company.quantity());
     }
 
     @org.junit.jupiter.api.Test
     void findEmployee() {
+        company.findEmployee(3000);
     }
 
     @org.junit.jupiter.api.Test
     void quantity() {
+        company.quantity();
     }
 
     @org.junit.jupiter.api.Test
     void totalSalary() {
+        double totalSalary = company.totalSalary();
+//        assertTrue(totalSalary, company.totalSalary());
     }
 
     @org.junit.jupiter.api.Test
