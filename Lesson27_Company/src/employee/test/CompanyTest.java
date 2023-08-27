@@ -43,8 +43,9 @@ class CompanyTest {
     @org.junit.jupiter.api.Test
     void removeEmployee() {
         company.removeEmployee(1000);
-        int sumEmployee = company.quantity();
-        assertEquals(sumEmployee, company.quantity());
+        assertEquals(3, company.quantity());
+        Employee employee = company.removeEmployee(1000);
+        assertEquals(employees[0], employee);
     }
 
     @org.junit.jupiter.api.Test
