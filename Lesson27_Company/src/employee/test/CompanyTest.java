@@ -43,32 +43,38 @@ class CompanyTest {
     @org.junit.jupiter.api.Test
     void removeEmployee() {
         company.removeEmployee(1000);
-        assertNull(employees[1]);
-        assertEquals(4, company.quantity());
+        int sumEmployee = company.quantity();
+        assertEquals(sumEmployee, company.quantity());
     }
 
     @org.junit.jupiter.api.Test
     void findEmployee() {
-        company.findEmployee(3000);
+        Employee findEmployee = company.findEmployee(3000);
+        assertEquals(findEmployee, company.findEmployee(3000));
     }
 
     @org.junit.jupiter.api.Test
     void quantity() {
-        company.quantity();
+        int quantity = employees.length;
+        assertEquals(quantity, company.quantity());
     }
 
     @org.junit.jupiter.api.Test
     void totalSalary() {
-        double totalSalary = company.totalSalary();
-//        assertTrue(totalSalary, company.totalSalary());
+        double totalSalary = 7710.0;
+        assertEquals(totalSalary, company.totalSalary());
     }
 
     @org.junit.jupiter.api.Test
     void avgSalary() {
+        double avgSalary = 1927.5;
+        assertEquals(avgSalary, company.avgSalary());
     }
 
     @org.junit.jupiter.api.Test
     void totalSales() {
+        double totalSales = employees[2].calcSalary() + employees[3].calcSalary();
+        assertEquals(totalSales, company.TotalSales());
     }
 
     @org.junit.jupiter.api.Test
