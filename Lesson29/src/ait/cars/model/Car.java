@@ -9,11 +9,13 @@ public abstract class Car {
     private double engine;
     private String color;
 
-    public Car(String regNumber, String model, String company, double engine) {
+
+    public Car(String regNumber, String model, String company, double engine, String color) {
         this.regNumber = regNumber;
         this.model = model;
         this.company = company;
         this.engine = engine;
+        this.color = color;
     }
 
     public String getRegNumber() {
