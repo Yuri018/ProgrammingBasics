@@ -12,4 +12,6 @@ public interface Company {
     double TotalSales();
     void printEmployees();
 
+    Employee[] findEmployeesHoursGreaterThan(int hours);
+    Employee[] findEmployeesSalaryRange(int minSalary, int maxSalary);
 }

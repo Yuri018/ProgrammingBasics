@@ -8,6 +8,8 @@ import employee.model.Manager;
 import employee.model.SaleManager;
 import employee.model.WageEmployee;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CompanyTest {
@@ -24,8 +26,8 @@ class CompanyTest {
         employees[2] = new SaleManager(3000, "Peter", "Jackson", 160, 20000, 0.1);
         employees[3] = new SaleManager(4000, "Rabindranat", "Anand", 80, 30000, 0.1);
 
-        for (int i = 0; i < employees.length; i++) {
-            company.addEmployee(employees[i]);
+        for (Employee employee : employees) {
+            company.addEmployee(employee);
         }
     }
 
@@ -42,16 +44,18 @@ class CompanyTest {
 
     @org.junit.jupiter.api.Test
     void removeEmployee() {
-        company.removeEmployee(1000);
+        Employee employee = company.removeEmployee(3000);
+        assertEquals(employees[2], employee);
         assertEquals(3, company.quantity());
-        Employee employee = company.removeEmployee(1000);
-        assertEquals(employees[0], employee);
+        assertNull(company.removeEmployee(3000));
     }
 
     @org.junit.jupiter.api.Test
     void findEmployee() {
         Employee findEmployee = company.findEmployee(3000);
         assertEquals(findEmployee, company.findEmployee(3000));
+        findEmployee = company.findEmployee(5000);
+        assertNull(findEmployee);
     }
 
     @org.junit.jupiter.api.Test
@@ -62,24 +66,38 @@ class CompanyTest {
 
     @org.junit.jupiter.api.Test
     void totalSalary() {
-        double totalSalary = 7710.0;
-        assertEquals(totalSalary, company.totalSalary());
+        double totalSalary = 11200.0;
+        assertEquals(totalSalary, company.totalSalary(), 0.01);
     }
 
     @org.junit.jupiter.api.Test
     void avgSalary() {
-        double avgSalary = 1927.5;
+        double avgSalary = 2800.0;
         assertEquals(avgSalary, company.avgSalary());
     }
 
     @org.junit.jupiter.api.Test
     void totalSales() {
         double totalSales = employees[2].calcSalary() + employees[3].calcSalary();
-        assertEquals(totalSales, company.TotalSales());
+        assertEquals(5000, totalSales);
     }
 
     @org.junit.jupiter.api.Test
     void printEmployees() {
         company.printEmployees();
+    }
+
+    @Test
+    void findEmployeesHoursGreaterThan(){
+        Employee[] actual = company.findEmployeesHoursGreaterThan(100);
+        Employee[] expected = {employees[0], employees[1], employees[2]};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void findEmployeesSalaryRange(){
+        Employee[] actual = company.findEmployeesSalaryRange(2000, 2500);
+        Employee[] expected = {employees[1], employees[2]};
+        assertArrayEquals(expected, actual);
     }
 }
