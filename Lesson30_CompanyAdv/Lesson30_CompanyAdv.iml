@@ -23,6 +23,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="Lesson30_CompanyAdv" />
+    <orderEntry type="module" module-name="Lesson27_Company" />
+    <orderEntry type="module" module-name="Lesson29" />
   </component>
 </module>
