@@ -68,6 +68,7 @@ public class Computer implements Comparable<Computer>{
 
     @Override
     public int compareTo(Computer o) {
-        return 0;
+        int result = this.operatingSystem.compareTo(o.operatingSystem);
+        return result != 0 ? result : Integer.compare(this.diskCapacity, o.diskCapacity);
     }
 }
