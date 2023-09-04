@@ -16,11 +16,15 @@ public class Garbage {
     }
 
     public static String returnColor(String word) {
-        return switch (word) {
-            case "papier" -> "blau";
-            case "bio" -> "braun";
-            case "rest" -> "schwarz";
-            default -> "Bring package beak home";
-        };
+        switch (word) {
+            case "papier":
+                return "blau";
+            case "bio":
+                return "braun";
+            case "rest":
+                return "schwarz";
+            default:
+                return "Bring package beak home";
+        }
     }
 }

@@ -34,7 +34,7 @@ public class Main09 {
         int min = evenNumbersArray[0];
 
         for (int i = 0; i < evenNumbersArray.length; i++) {
-            evenNumbersArray[i] = random.nextInt(10, 90);
+            evenNumbersArray[i] = random.nextInt();
             if (evenNumbersArray[i] > max){
                 max = evenNumbersArray[i];
                 min = evenNumbersArray[i];

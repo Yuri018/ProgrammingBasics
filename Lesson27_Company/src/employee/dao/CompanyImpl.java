@@ -1,7 +1,7 @@
 package employee.dao;
 
 import employee.model.Employee;
-import employee.model.SaleManager;
+import employee.model.SalesManager;
 
 
 public class CompanyImpl implements Company {
@@ -66,13 +66,14 @@ public class CompanyImpl implements Company {
         return totalSalary() / size;
     }
 
+
     @Override
-    public double TotalSales() {
+    public double totalSales() {
         double sum = 0;
         for (int i = 0; i < size; i++) {
-            if (employees[i] != null && employees[i] instanceof SaleManager) {//проверка, что не null и что это SaleManager
-                SaleManager sm = (SaleManager) employees[i];// Даункастинг
-                sum += sm.getSaleValue();
+            if (employees[i] != null && employees[i] instanceof SalesManager) {//проверка, что не null и что это SaleManager
+                SalesManager sm = (SalesManager) employees[i];// Даункастинг
+                sum += sm.getSalesValue();
             }
         }
         return sum;

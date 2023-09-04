@@ -21,7 +21,7 @@ public class Main09 {
         double[] doubleRandomArray = new double[10];
 
         for (int i = 0; i < doubleRandomArray.length; i++) {
-            double random1 =  random.nextInt(10, 21);
+            double random1 =  random.nextInt();
             doubleRandomArray[i] = random1;
             System.out.print(doubleRandomArray[i] + "|");
         }
