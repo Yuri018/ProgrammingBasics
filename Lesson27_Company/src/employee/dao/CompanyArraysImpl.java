@@ -104,11 +104,13 @@ public class CompanyArraysImpl implements Company {
 
     private Employee[] findEmployeesByPredicate(Predicate<Employee> predicate) {
         int count = 0;
+        Employee[] temp = new Employee[size];
         for (int i = 0; i < size; i++) {
             if (predicate.test(employees[i])) {
+                temp[count] = employees[i];
                 count++;
             }
         }
-        return Arrays.copyOf(employees, count);
+        return Arrays.copyOf(temp, count);
     }
 }

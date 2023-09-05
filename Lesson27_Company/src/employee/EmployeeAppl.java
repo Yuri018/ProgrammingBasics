@@ -26,6 +26,10 @@ public class EmployeeAppl {
             company.addEmployee(employee);
         }
 
-        System.out.println(Arrays.toString(employees));
+        Employee[] find = company.findEmployeesSalaryRange(2000, 2500);
+        System.out.println(Arrays.toString(find));
+
+        find = company.findEmployeesHoursGreaterThan(100);
+        System.out.println(Arrays.toString(find));
     }
 }

@@ -3,6 +3,9 @@ package employee.dao;
 import employee.model.Employee;
 import employee.model.SalesManager;
 
+import java.util.Arrays;
+import java.util.function.Predicate;
+
 
 public class CompanyImpl implements Company {
 
@@ -88,37 +91,30 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee[] findEmployeesHoursGreaterThan(int hours) {
-        int count = 0;
-        for (int i = 0; i < size; i++) {
-            if (employees[i].getHours() >= hours){
-                count++;
-            }
-        }
-        Employee[] res = new Employee[count];
-        for (int i = 0, j = 0; j < res.length; i++) {
-            if (employees[i].getHours() >= hours){
-                res[j] = employees[i];
-                j++;
-            }
-        }
-        return res;
+        Predicate<Employee> predicate = e -> e.getHours() >= hours;
+        return findEmployeesByPredicate(predicate);
     }
 
     @Override
     public Employee[] findEmployeesSalaryRange(int minSalary, int maxSalary) {
+        Predicate<Employee> predicate = new Predicate<Employee>() {
+            @Override
+            public boolean test(Employee employee) {
+                return employee.calcSalary() >= minSalary && employee.calcSalary() < maxSalary;
+            }
+        };
+        return findEmployeesByPredicate(predicate);
+    }
+
+    private Employee[] findEmployeesByPredicate(Predicate<Employee> predicate) {
         int count = 0;
+        Employee[] temp = new Employee[size];
         for (int i = 0; i < size; i++) {
-            if (employees[i].calcSalary() >= minSalary && employees[i].calcSalary() < maxSalary){
+            if (predicate.test(employees[i])) {
+                temp[i] = employees[i];
                 count++;
             }
         }
-        Employee[] res = new Employee[count];
-        for (int i = 0, j = 0; j < res.length; i++) {
-            if (employees[i].calcSalary() >= minSalary && employees[i].calcSalary() < maxSalary){
-                res[j] = employees[i];
-                j++;
-            }
-        }
-        return res;
+        return Arrays.copyOf(temp, count);
     }
 }
